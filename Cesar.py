@@ -2,7 +2,7 @@ def encrypt(word, key):
     result = ""
 
     for letter in word:
-        if letter.isalpha():
+        if ord(letter) >= 67 and ord(letter) <= 122:
             firstLetter = ord("A")
             new = (ord(letter) - firstLetter + key) % 26
             result += chr(firstLetter + new)
@@ -16,7 +16,7 @@ def decrypt(word, key):
     result = ""
 
     for letter in word:
-        if letter.isalpha():
+        if ord(letter) >= 67 and ord(letter) <= 122:
             firstLetter = ord("A")
             new = (ord(letter) - firstLetter - key) % 26
             result += chr(firstLetter + new)
